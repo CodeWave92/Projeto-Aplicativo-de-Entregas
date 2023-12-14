@@ -1,8 +1,8 @@
 var vilaOceanopolisCoordinates = { lat: -24.124388, lng: -46.696362 };
 
 var mapOptions = {
-    center: vilaOceanopolisCoordinates, 
-    zoom: 15, 
+    center: vilaOceanopolisCoordinates,
+    zoom: 15,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 
@@ -15,6 +15,7 @@ var directionsService = new google.maps.DirectionsService();
 var directionsDisplay = new google.maps.DirectionsRenderer();
 
 directionsDisplay.setMap(map);
+
 function calcRoute() {
     var request = {
         origin: document.getElementById("location-1").value,
@@ -46,7 +47,7 @@ function calcRoute() {
             var formattedDistance = result.routes[0].legs[0].distance.text;
             var formattedDuration = result.routes[0].legs[0].duration.text;
 
-            $("#output").html("<div class='result-table'> Driving distance: " + formattedDistance + ".<br />Duration: " + formattedDuration + ".<br />Custo: " + costInCents.toFixed(2) + " R$</div>");
+            $("#output").html("<div class='result-table'> Distancia: " + formattedDistance + ".<br />Tempo estimado: " + formattedDuration + ".<br />Preço: " + costInCents.toFixed(2) + " R$</div>");
             document.getElementById("output").style.display = "block";
 
             directionsDisplay.setDirections(result);
@@ -60,10 +61,7 @@ function calcRoute() {
     });
 }
 
-
-
-
-function clearRoute(){
+function clearRoute() {
     document.getElementById("output").style.display = "none";
     document.getElementById("location-1").value = "";
     document.getElementById("location-2").value = "";
@@ -104,16 +102,17 @@ function showPosition(position) {
         }
     });
 }
-$(document).ready(function() {
+
+$(document).ready(function () {
     var deliveryHistory = [];
 
-    // Função para exibir o histórico de entregas pendentes
     function displayDeliveryHistory() {
         var historyContent = '';
         if (deliveryHistory.length > 0) {
-            deliveryHistory.forEach(function(delivery, index) {
+            deliveryHistory.forEach(function (delivery, index) {
                 var status = delivery.accepted ? (delivery.confirmed ? "Entrega Confirmada" : "Entrega Aceita, Aguardando Confirmação") : "Entrega Pendente";
-                historyContent += "<p><strong>Entrega " + (index + 1) + ":</strong> " + status + "</p>";
+                var deliveryDateTime = new Date().toLocaleString(); // Obtém data e hora atuais
+                historyContent += "<p><strong>Entrega " + (index + 1) + ":</strong> " + status + "<br>Preço: " + delivery.price + " R$<br>Data e Hora do Pedido: " + deliveryDateTime + "</p>";
             });
         } else {
             historyContent = "<p>Nenhuma entrega pendente no momento.</p>";
@@ -121,30 +120,28 @@ $(document).ready(function() {
         $("#deliveryHistory").html(historyContent);
     }
 
-    // Função para salvar os dados da entrega no sessionStorage
     function saveDeliveryToSessionStorage() {
         sessionStorage.setItem("currentDelivery", JSON.stringify(deliveryHistory));
     }
 
-    // Botão para aceitar a entrega
-    $("#acceptDelivery").on("click", function() {
+    $("#acceptDelivery").on("click", function () {
+        var price = parseFloat($("#output .result-table").text().match(/\d+\.\d+/)[0]);
         if (deliveryHistory.length > 0 && !deliveryHistory[deliveryHistory.length - 1].accepted) {
             alert("Você já tem uma entrega pendente para aceitar. Confirme ou cancele a entrega anterior antes de aceitar uma nova.");
         } else {
-            // Simulando o redirecionamento para a tela de pagamento
             alert("Redirecionando para a tela de pagamento...");
- window.location.href = "http://www.devmedia.com.br";            // Adiciona a entrega aceita ao histórico de entregas pendentes
+            window.location.href = "TelaPagamento.html"
             deliveryHistory.push({
                 accepted: true,
-                confirmed: false
+                confirmed: false,
+                price: price,
             });
             displayDeliveryHistory();
             saveDeliveryToSessionStorage(); // Salva os dados no sessionStorage
         }
     });
 
-    // Botão para confirmar a entrega
-    $("#confirmDelivery").on("click", function() {
+    $("#confirmDelivery").on("click", function () {
         if (deliveryHistory.length === 0) {
             alert("Não há entrega para confirmar.");
         } else if (!deliveryHistory[deliveryHistory.length - 1].accepted) {
@@ -159,7 +156,6 @@ $(document).ready(function() {
         }
     });
 
-    // Carrega os dados da entrega armazenados na sessão ao iniciar a página
     if (sessionStorage.getItem("currentDelivery")) {
         deliveryHistory = JSON.parse(sessionStorage.getItem("currentDelivery"));
         displayDeliveryHistory();
