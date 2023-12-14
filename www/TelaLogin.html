@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/TelaLoginECadastro.css">
+    <title>Tela de Login </title>
+</head>
+
+<body>
+    <form class="login">
+        <input class="voltar" type="button" value="❮"> <a href="index.html">Voltar</a>
+        <br>
+        <br><br><br>
+        <center> <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="120px" height="120px">
+        <br><br>
+            <h2>Login</h2>
+        </center>
+        <div class="box-user">
+            <input type="text" name="" required>
+            <label>Usuário</label>
+        </div>
+        <div class="box-user">
+            <input type="password" name="" required>
+            <label>Senha</label>
+        </div>
+        <div>
+            <a href="TelaCadastro.html" class="forget"> <h3>Cadastrar-se</h3></a>
+        </div>
+        <div>
+            <a href="TelaEsqueciSenha.html" class="forget"> <h3> Esqueceu a senha?</h3></a>
+        </div>
+
+<br><br><br><br>
+
+        <button type="button" class="Botao" onclick="enviarFormulario()">Continuar</button>
+    </form>
+
+     <script>
+        function enviarFormulario() {
+           window.location.href = 'TelaHome.html';
+        }
+    </script>
+</body>
+
+</html>

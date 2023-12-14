@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+   
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/pagarEmitir.css">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body class="bg-black">
+    
+	<style>
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+
+html,
+body {
+  font-family: 'Hammersmith One', sans-serif;
+   
+}
+
+    .payment-options {
+     display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+    
+  .cardCartao{
+     width: 300px;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 5px 12px -2px rgba(0,0,0,0.1), 0 18px 36px -6px rgba(0,0,0,0.1);
+  }
+    label {
+      cursor: pointer;
+      padding: 10px;
+      width: 140px;
+      background-color: white;
+      border: 1px solid #871821;
+      border-radius: 5px;
+      color: #871821;
+text-align: center;
+    }
+
+    input[type="radio"]:checked + label {
+      background-color: #871821;
+      color: #fff;
+    }
+     @media screen and (min-width: 600px) {
+            .container{
+                width: 200px;
+            }
+
+            .label {
+                max-width: 200px;
+            }
+             input {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+        }
+
+        @media screen and (max-width: 1080px) {
+            main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 82vh;
+}
+ input {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+.menu{
+margin-top: -30px;
+}
+        }
+
+  </style>
+     <nav >
+         <br>
+         <ul><a href="TelaPagamento.html"><i class="fa-solid fa-arrow-left" style="color: #871821; margin-left:10px; margin-top: 3px;"></i></a></ul>
+             <ul><h4>Pagar Serviços</h4></ul>
+     </nav>
+     <hr></hr>
+    <br>
+    <main>
+    <div class="cardCartao">
+        <div class="title">
+            <h4>Selecione o <span>método</span> <span>pagamento</span>
+        </div>
+        <form action="#">
+            
+        <div class="payment-options">
+    <input type="radio" id="debit" name="payment" value="Débito" onclick="tipo(this)" />
+    <label for="debit">Débito</label>
+
+    <input type="radio" id="credit" name="payment" value="Crédito" onclick="tipo(this)" />
+    <label for="credit">Crédito</label>
+  </div>
+ 
+        </form>
+    </div>
+    </main>
+   <div class="navigation">
+<ul>
+<li class="list ">
+<a href="TelaEnvios.html">
+<span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+<span class="text">Pedido</span>
+</a>
+</li>
+<li class="list">
+<a href="TelaHistorico.html">
+<span class="icon"><ion-icon name="timer-outline"></ion-icon></span>
+<span class="text">Histórico</span>
+</a>
+</li>
+<li class="list">
+<a href="TelaHome.html">
+<span class="icon"><ion-icon name="notifications-outline"></ion-icon></span>
+<span class="text">Notificação</span>
+</a>
+</li>
+<li class="list active">
+<a href="TelaPagamento.html">
+<span class="icon"><ion-icon name="wallet-outline"></ion-icon></span>
+<span class="text">Pagamento</span>
+</a>
+</li>
+<li class="list">
+<a href="TelaPerfil.html">
+<span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+<span class="text">Perfil</span>
+</a>
+</li>
+<div class="indicator"></div>
+</ul>
+</div>
+<script>
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+      list.forEach((item) =>
+      item.classList.remove('active'));
+      this.classList.add('active');
+    }
+    list.forEach((item) =>
+    item.addEventListener('click', activeLink));
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>
+<script>
+        //function para enviar o método de pagamento para o form
+        function tipo(input) {
+      if (input.checked) {
+         sessionStorage.setItem("paymentType", input.value);
+        window.location.href = "TelaPagamento03.html";
+      }
+    }
+         
+    </script>

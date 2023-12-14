@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #172031;
+}
+.login{
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 400px;
+    height: 100vh;
+    padding: 40px;
+}
+a{
+    color: #172031;
+    text-decoration: none;
+}
+a:hover{
+    color: #172031;
+}
+.login h2{
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+}
+.login .box-user{
+    position: relative;
+}
+.login .box-user input{
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #000000;
+    color: #000000;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.login .box-user label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    color: #000000;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+.login .box-user input:focus~label,
+.login .box-user input:valid~label
+{
+    top: -20px;
+    left: 0;
+    color: #871821;
+    font-size: 12px;
+}
+.forget{
+    font-size: 12px;
+    color: #5b6b8b;
+    float: right;
+    margin: 8px;
+}
+.btn{
+    position: relative;
+    display: inline-block;
+    padding: 12px 20px;
+    color: #871821;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: .5s;
+    overflow: hidden;
+}
+ .pa{
+    color: #5b6b8b;
+    margin-bottom: 36px;
+    
+ }
+
+ input[type="submit"],
+        button {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #871821;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all .1s;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: transparent;
+            border: 2px solid #000000;
+            color: #000000;
+        }
+
+        .voltar {
+            background-color: transparent;
+            color: white;
+        }
+
+        input[type="button"] {
+            color: #871821;
+            font-size: 19px;
+        }
+

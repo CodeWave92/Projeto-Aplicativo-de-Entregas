@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="css/style.css">
+
+   
+     <link rel="stylesheet" href="css/pagarform.css">
+    <script src="components/loader.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<style>
+    
+.data{
+    width:150px;
+
+}
+.cvv{
+    width:160px;
+    margin-left: 170px;
+  
+}
+.cv{
+     margin-left: 170px;
+    margin-top: -80px;
+}
+</style>
+<body>
+   <nav >
+         <br>
+         <ul><a href="TelaPagamento02.html"><i class="fa-solid fa-arrow-left" style="color: #871821; margin-left:10px; margin-top: 3px;"></i></a></ul>
+             <ul><h4>Pagamento</h4></ul>
+     </nav>
+     <hr></hr>
+    <br> 
+    <div class="app-container">
+        <center>
+            
+        <div class="card-valor">
+            <span class="card-title">R$</span><h3 id="valor"> </h3><br>
+            
+        </div>
+        <h5></h5> <h5 class="tipoCartao"></h5>
+        </center><br><br><br>
+    </div>
+              <div class="containerCard">
+    <div class="dados">
+         
+       <!--Formulario de pagamento-->
+     
+    
+         
+                    <div class="card-details">
+   
+   <form id="cardForm" id="formulario">
+        <div class="form-group">
+            <label for="cardNumber">Nome:</label>
+            <input type="text" id="nome"oninput="verificarCamposPreenchidos()" required>
+        </div>
+        <div class="form-group">
+            <label for="cardNumber">Número do Cartão:</label>
+            <input type="text" id="cardNumber" oninput="verificarCamposPreenchidos()" placeholder="**** **** **** ****" required>
+        </div>
+     
+        <div class="form-group">
+            <label for="expiryDate">Validade:</label>
+            <input class="data" type="text" oninput="verificarCamposPreenchidos()" id="expiryDate" placeholder="MM/AA" required>
+        </div>
+        <div class="form-group">
+            <label class="cv" for="cvv">CVV:</label>
+            <input class="cvv" type="text" oninput="verificarCamposPreenchidos()" id="cvv" placeholder="***" required>
+        </div>
+        
+       
+       <a href="TelaHome.html">
+       <button type="submit" onclick="mostrarAlertas()" id="btnEnviar" >Enviar</button>
+       </a>
+       
+      
+    </form>
+  
+<br><br><br><br><br>
+
+
+<div class="navigation">
+<ul>
+<li class="list ">
+<a href="TelaEnvios.html">
+<span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+<span class="text">Pedido</span>
+</a>
+</li>
+<li class="list">
+<a href="TelaHistorico.html">
+<span class="icon"><ion-icon name="timer-outline"></ion-icon></span>
+<span class="text">Histórico</span>
+</a>
+</li>
+<li class="list">
+<a href="TelaHome.html">
+<span class="icon"><ion-icon name="notifications-outline"></ion-icon></span>
+<span class="text">Notificação</span>
+</a>
+</li>
+<li class="list active">
+<a href="TelaPagamento.html">
+<span class="icon"><ion-icon name="wallet-outline"></ion-icon></span>
+<span class="text">Pagamento</span>
+</a>
+</li>
+<li class="list">
+<a href="TelaPerfil.html">
+<span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+<span class="text">Perfil</span>
+</a>
+</li>
+<div class="indicator"></div>
+</ul>
+</div>
+<script>
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+      list.forEach((item) =>
+      item.classList.remove('active'));
+      this.classList.add('active');
+    }
+    list.forEach((item) =>
+    item.addEventListener('click', activeLink));
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+        var opcaoSelecionada = urlParams.get('opcao');
+
+        // Exibe a opção no elemento h5
+        document.querySelector('h5').textContent += " " +" "+ opcaoSelecionada;
+              const paymentType = sessionStorage.getItem("paymentType");
+          document.querySelector('h5').textContent +=" "+ "-"+" " + paymentType;
+
+
+  // Mostrar extrato no alert
+  //Assim que os cálculos estiverem prontos adicionar a variaveld do desconto, para ser exibido no alert
+          function mostrarAlertas() {
+  alert("O valor foi pago!");
+
+  var customerName = document.getElementById("nome").value;
+  var dataHora = new Date();
+  var dataHoraFormatada = dataHora.toLocaleString();
+  var mensagemAlerta = `Extrato de pagamento \nNome: ${customerName} \nValor Total: ${valorRecebido} \nDesconto: \nCompra no: ${paymentType} \nBandeira: ${opcaoSelecionada} \nData e Hora: ${dataHoraFormatada}`;
+
+  alert(mensagemAlerta);
+}
+var urlParams = new URLSearchParams(window.location.search);
+        var valorRecebido = urlParams.get('valor');
+        document.querySelector('#valor').textContent += " " + valorRecebido;
+        document.querySelector('#valor_total').textContent += " " + valorRecebido;
+
+       window.location.href = 'TelaHome.html';
+
+</script>
+<script src="js/pagar.js"></script>
+<script>
+   
+</script>

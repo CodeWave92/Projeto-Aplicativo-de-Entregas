@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="css/TelaHome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+
+ <!– INICIO DA NAVBAR –>
+   <header>
+         <div class="wrapper">
+            <div class="container">
+                <img class="icon" src="ImagensTelaDeHome/IconeUsuario.png" style="width: 70%; height: auto;">
+                <div class="menulogo"></div>
+            </div>
+        </div>
+        </nav>
+    </header>
+    <!– FINAL DA NAVBAR –>
+
+    <br><br><br>
+
+      <center>
+    <img class="ImagemInicial" alt="BikeJet" src="ImagensTelaDeHome/BikeJet.png" style="width: 40%; height: auto;">
+     </center>
+
+    <br>
+
+    <center>
+    <img class="ImagemTitulo01" alt="Seu App de entregas!" src="ImagensTelaDeHome/ImagemTexto01.png" style="width: 43%; height: auto;">
+     </center>
+
+    <center>
+    <img class="ImagemLogo" alt="Logo da BikeJet" src="ImagensTelaDeHome/LogoBikeJet.png" style="width: 60%; height: auto;">
+     </center>
+
+       <br>
+
+    <center>
+    <img class="ImagemTitulo02" alt="Acesse já!" src="ImagensTelaDeHome/ImagemTexto02.png" style="width: 23%; height: auto;">
+     </center>
+
+<br><br>
+
+    <center>
+
+     <a href="#">
+     <img class="Botao01" alt="Botão Pedido" src="ImagensTelaDeHome/BotaoPedido.png" style="width: 30%; height: auto;">  
+     </a>
+     
+     <span class="texto01"> ----- </span>
+
+     <a href="#">
+     <img class="Botao02" alt="Botão Pagamento" src="ImagensTelaDeHome/BotaoPagamento.png" style="width: 30%; height: auto;">
+     </a>
+
+    </center>
+
+    <br>
+
+    <center>
+     <a href="#">
+     <img class="Botao03" alt="Botão Histórico" src="ImagensTelaDeHome/BotaoHistorico.png" style="width: 30%; height: auto;"> 
+     </a>
+    </center>
+
+<br><br> 
+
+<div class="navigation">
+<ul>
+<li class="list active">
+<a href="TelaEnvios.html">
+<span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+<span class="text">Pedido</span>
+</a>
+</li>
+<li class="list">
+<a href="#">
+<span class="icon"><ion-icon name="timer-outline"></ion-icon></span>
+<span class="text">Histórico</span>
+</a>
+</li>
+<li class="list">
+<a href="#">
+<span class="icon"><ion-icon name="notifications-outline"></ion-icon></span>
+<span class="text">Notificação</span>
+</a>
+</li>
+<li class="list">
+<a href="metodoPagar.html">
+<span class="icon"><ion-icon name="wallet-outline"></ion-icon></span>
+<span class="text">Pagamento</span>
+</a>
+</li>
+<li class="list">
+<a href="perfil.html">
+<span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+<span class="text">Perfil</span>
+</a>
+</li>
+<div class="indicator"></div>
+</ul>
+</div>
+<script>
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+      list.forEach((item) =>
+      item.classList.remove('active'));
+      this.classList.add('active');
+    }
+    list.forEach((item) =>
+    item.addEventListener('click', activeLink));
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

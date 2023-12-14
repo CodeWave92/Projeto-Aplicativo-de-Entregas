@@ -1,0 +1,149 @@
+
+/*Estilizando a pag "Formas de pagamento"*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+span{
+    color:#871821;
+    
+}
+.title{
+    text-align: center;
+}
+.name{
+    color: black;
+}
+
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+img{
+    width: 60px;
+    height: auto;
+}
+h4{
+    margin-top: -15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+    
+    height: 60px;
+    border-radius: 5px;
+     box-shadow:  0 0 0 1px rgba(0,0,0,0.1), 0 5px 12px -2px rgba(0,0,0,0.1);
+
+}
+.container{
+    width: 400px;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 5px 12px -2px rgba(0,0,0,0.1), 0 18px 36px -6px rgba(0,0,0,0.1);
+
+}
+.container .title{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container form .category{
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.category label{
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.cartao1 {
+    width: 38px;
+}
+.cartao2{
+    width: 60px;
+}
+button{
+    display: none;
+}
+.cartao3 {
+    width: 49px;
+}
+.cartao4 {
+    width: 35px;
+}
+label .imgName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+label:nth-child(2), label:nth-child(3) {
+    margin: 15px 0;
+}
+.imgName .name{
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.check i{
+    font-size: 18px;
+
+}
+.check{
+    display: none;
+}
+#picpay:checked ~.category .ppayMethod ,
+#visa:checked ~.category .visaMethod,
+#mastercard:checked ~.category .mastercardMethod,
+#paypal:checked ~.category .paypalMethod{
+    box-shadow: 0px 0px 0px 1px #871821;
+}
+#picpay:checked ~.category .ppayMethod .check,
+#visa:checked ~.category .visaMethod .check,
+#mastercard:checked ~.category .mastercardMethod .check,
+#paypal:checked ~.category .paypalMethod .check{
+    display: block;
+}
+.container form .input01{
+    display: none;
+}
+ @media screen and (min-width: 600px) {
+            .container{
+                width: 200px;
+            }
+
+            .label {
+                max-width: 200px;
+            }
+             input {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+        }
+
+        @media screen and (max-width: 1080px) {
+            main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 82vh;
+}
+ input {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+.menu{
+margin-top: -30px;
+}
+        }
+

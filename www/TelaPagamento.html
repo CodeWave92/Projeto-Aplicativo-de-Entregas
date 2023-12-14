@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+       <link rel="stylesheet" href="css/pagarEmitir.css">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+     </style>
+</head>
+<body>
+     
+	
+     <nav >
+         <br>
+         <ul><a href="TelaLocalizacao.html"><i class="fa-solid fa-arrow-left" style="color: #871821; margin-left:10px; margin-top: 3px;"></i></a></ul>
+             <ul><h4>Pagar Serviços</h4></ul>
+     </nav>
+     <hr></hr>
+    <br>
+    <main>
+    <div class="container">
+        <div class="title">
+            <h4>Selecione a<span> bandeira do seu cartão</span> 
+        </div>
+        <form action="#">
+            
+         
+  
+         <input type="radio" class="input01" name="payment" value="Picpay" id="picpay"onclick="enviarOpcao()" >
+         <input type="radio"  class="input01" name="payment" id="visa" value="Visa" onclick="enviarOpcao()">
+         
+          <input type="radio" class="input01" name="payment" id="mastercard" value="Mastercard" onclick="enviarOpcao()">
+           <input type="radio" class="input01" name="payment" id="paypal" value="Paypal" onclick="enviarOpcao()" >
+        
+         <div class="category">
+         <label for="picpay" class="ppayMethod" >
+               <div class="imgName">
+                  <div class="imgContainer" >
+                      <img class="cartao1" src="imgPagar/picpayyy.png" alt="picpay">
+                  </div>
+                  <span class="name" style="margin-left:20px;">Picpay</span>
+              </div>
+<span class="check"><i class="fa-solid fa-circle-check" style="color: #871821;"></i></span>
+         
+          </label>
+          
+          <label for="visa" class="visaMethod"" name="Picpay">
+              <div class="imgName">
+                  <div class="imgContainer">
+                      <img class="cartao2" src="imgPagar/visa.jpg" alt="Visa">
+                  </div>
+                  <span class="name" style="margin-left:20px;">Visa</span>
+              </div>
+<span class="check"><i class="fa-solid fa-circle-check" style="color: #871821;"></i></span>
+          </label>
+           
+          <label for="mastercard" class="mastercardMethod"">
+          <div class="imgName">
+                  <div class="imgContainer">
+                      <img  class="cartao3"src="imgPagar/mastercard.jfif" alt="MasterCard">
+                  </div>
+                  <span class="name" style="margin-left:30px;">MasterCard</span>
+              </div>
+             <span class="check"><i class="fa-solid fa-circle-check" style="color: #871821;"></i></span>
+
+          </label>
+          <label for="paypal" class="paypalMethod"">
+              <div class="imgName">
+                  <div class="imgContainer">
+                      <img class="cartao4" src="imgPagar/paypal.png" alt="PayPal">
+                  </div>
+                  <span class="name" style="margin-left:40px;">PayPal</span>
+              </div>
+              <span class="check"><i class="fa-solid fa-circle-check" style="color: #871821;"></i></span>
+          </label>
+          
+         </div>
+         
+        </form>
+    </div>
+    
+    </main>
+       <div class="navigation">
+ 
+    <ul>
+ 
+      <li class="list">
+ 
+        <a href="TelaEnvios.html">
+ 
+          <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+ 
+          <span class="text">Localização</span>
+ 
+        </a>
+ 
+      </li>
+ 
+      <li class="list">
+ 
+        <a href="TelaHistorico.html">
+ 
+          <span class="icon"><ion-icon name="timer-outline"></ion-icon></span>
+ 
+          <span class="text">Histórico</span>
+ 
+        </a>
+ 
+      </li>
+ 
+      <li class="list">
+ 
+        <a href="TelaHome.html">
+ 
+          <span class="icon"><ion-icon name="notifications-outline"></ion-icon></span>
+ 
+          <span class="text">Notificação</span>
+ 
+        </a>
+ 
+      </li>
+ 
+      <li class="list active">
+ 
+        <a href="TelaPagamento.html">
+ 
+          <span class="icon"><ion-icon name="wallet-outline"></ion-icon></span>
+ 
+          <span class="text">Pagamento</span>
+ 
+        </a>
+ 
+      </li>
+ 
+      <li class="list">
+ 
+        <a href="TelaPerfil.html">
+ 
+          <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+ 
+          <span class="text">Perfil</span>
+ 
+        </a>
+ 
+      </li>
+ 
+      <div class="indicator"></div>
+ 
+    </ul>
+ 
+  </div>
+  
+</body>
+</html>
+<script>
+        //function para enviar o método de pagamento para o form
+        function enviarOpcao() {
+            var opcaoSelecionada = document.querySelector('input[name="payment"]:checked');
+            if (opcaoSelecionada) {
+                window.location.href = "TelaPagamento02.html?opcao=" + encodeURIComponent(opcaoSelecionada.value);
+            } else {
+                alert("Por favor, selecione uma opção antes de enviar.");
+            }
+        }
+        
+    const list = document.querySelectorAll('.list');
+ 
+    function activeLink(){
+ 
+      list.forEach((item) =>
+ 
+      item.classList.remove('active'));
+ 
+      this.classList.add('active');
+ 
+    }
+ 
+    list.forEach((item) =>
+ 
+    item.addEventListener('click', activeLink));
+    
+    
+         
+    </script>
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    

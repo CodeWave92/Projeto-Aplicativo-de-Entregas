@@ -1,0 +1,200 @@
+/* Reset de estilos e configurações globais */
+* {
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/* Configurações básicas da página */
+html {
+    font-size: 62.5%; /* Define 1rem como 10px */
+}
+
+body {
+    height: 96vh;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-size: cover;
+    background-position: top;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #000;
+}
+
+/* Limpa floats */
+.row::after {
+    content: "";
+    display: table;
+    clear:both;
+}
+
+/* Estilos do cabeçalho */
+.header {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1rem;
+    margin: 2rem auto;
+}
+
+.header h1 {
+    color: #19244e;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* Estilos do container principal */
+.container {
+    width: 65vw;
+    border-radius: 1rem;
+    background-color: #fff;
+    padding: 2rem;
+}
+
+/* Estilos dos inputs de localização */
+.location-label {
+    font-size: 1.6rem;
+    float: left;
+    width: 25%;
+    margin-top: .6rem;
+}
+
+.location-input {
+    float: left;
+    width: 75%;
+    margin-top: .6rem;
+}
+
+/* Estilos dos placeholders nos inputs */
+.location-input::-webkit-input-placeholder,
+::-moz-placeholder,
+::-ms-placeholder,
+::placeholder {
+    color:#465caa;
+}
+
+/* Estilos dos botões */
+.button {
+    background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+    text-transform: uppercase;
+    text-decoration: none;
+    outline:none;
+    color: white;
+    padding: 1.2rem 2.2rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 1rem;
+    margin-right: .5rem;
+    transition: ease-in-out .1s;
+}
+
+.button:hover {
+    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+    transform: scale(1.015);
+    transition: ease-in .1s;
+}
+
+/* Estilos da tabela de resultados */
+.result-table {
+    font-size: 1.6rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 10rem;    
+
+    animation-name: moveIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+/* Estilos do contêiner do mapa */
+.map-container {
+    width: 100%;
+    margin: 1rem auto;
+    overflow: hidden; 
+}
+
+/* Estilos do mapa */
+.container-map {
+    width: 100%;
+    height: 20rem;
+}
+
+/* Animação do resultado */
+@keyframes moveIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-.5rem);
+    }
+    
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .inputs-container {
+        padding: 1rem;
+    }
+
+    .row {
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .location-input {
+        width: 70%;
+        font-size: 1.2rem;
+    }
+
+    .location-label {
+        width: 100%;
+    }
+
+    .button {
+        width: 48%;
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    .container-map {
+        height: 65rem;
+    }
+
+    /* Adicionando margem à esquerda nos inputs */
+    .location-input input[type="text"] {
+        width: calc(100% - 20px); 
+        padding: 10px;
+        font-size: 1.6rem;
+        margin-left: 25px;
+        margin-top: 5px;
+    }
+
+    #location-1::placeholder {
+        font-weight: bold;
+        color: #465caa;
+    }
+
+    #location-1::-webkit-input-placeholder {
+        font-weight: bold;
+        color: #465caa;
+    }
+
+    #location-2::placeholder {
+        font-weight: bold;
+        color: #465caa;
+    }
+
+    #location-2::-webkit-input-placeholder {
+        font-weight: bold;
+        color: #465caa;
+    }
+}

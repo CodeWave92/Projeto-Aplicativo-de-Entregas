@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/TelaLoginECadastro.css">
+    <title>Tela de Login</title>
+</head>
+<body>
+    <form class="login">
+        <input class="voltar" type="button" value="❮"> <a href="index.html">Voltar</a>
+        <br>
+        <br><br><br>
+        <h2>Cadastrar-se</h2><br>
+        <div class="box-user">
+            <input type="text" name="" required>
+            <label>Nome de Usuário:</label>
+        </div>
+        <div class="box-user">
+            <input type="text" name="" required>
+            <label>CPF:</label>
+        </div>
+        <div class="box-user">
+            <input type="text" name="" required>
+            <label>E-mail:</label>
+        </div>
+        
+        <div class="box-user">
+            <input type="password" name="" required>
+            <label>Digite a Senha:</label>
+        </div>
+        <div class="box-user">
+            <input type="password" name="" required>
+            <label>Repita a Senha:</label>
+        </div>
+        
+        <div class="box-user">
+            <input type="" name="" required>
+            <label>Numero de Telefone:</label>
+        </div>
+        <div>
+
+            <br>
+            <a href="TelaLogin.html" class="forget"> <h3>Já tenho uma conta!</h3></a>
+        </div><br><br><br><br>
+   
+   <button type="button" class="Botao" onclick="enviarFormulario()">Cadastrar</button>
+    </form>
+
+     <script>
+        function enviarFormulario() {
+            alert("Dados cadastrados com sucesso! ");
+           window.location.href = 'TelaLogin.html';
+        }
+    </script>
+</body>
+</html>

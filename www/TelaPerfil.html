@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- scripts -->
+    <script src="js.js" defer></script>
+    <title>Profile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+    }
+html,
+body {
+  font-family: 'Hammersmith One', sans-serif;
+}
+.topo{
+    background: #d3d3d3;
+    
+}
+.close{
+ margin-top: -5%;
+}
+.noti{
+    border: none;
+    width: 30%;
+    margin-left: 70%;
+    margin-top: 2%;
+  
+}
+.noti i{
+    font-size: 3.5vh;
+    padding: 10%;
+
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.h-100{
+    height: 100%;
+}
+
+.m-2{
+    margin: 12px;
+}
+
+.p-4{
+    padding: 24px;
+}
+
+/**/
+#form-form{
+    & .image-upload{
+        position: relative;
+        width: 14vh;
+        height: 14vh;
+        border: 4px solid black;
+        border-radius: 100%;
+        overflow: hidden;
+        margin-top:-0%;
+    }
+
+    & .image-upload img{
+        object-fit: cover;
+    }
+
+    & .image-upload i{
+        position: absolute;
+        margin: 0 auto;
+        font-size: 100px;
+        color: black;
+        z-index: -3;
+    }
+
+    & #image-field{
+        position: absolute;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+h1{
+    font-size: 4vh;
+    margin-top: -0.5%;
+}
+.btn{
+    margin-top: 3%;
+    padding: 4%;
+    width: 100%;
+    font-size: 2.8vh;
+    text-align: left;
+    background: white;
+    border: none;
+    }
+.btn i{
+    font-size: 3vh;
+    margin: 0 2%;
+}
+.sair{
+    padding: 4%;
+    width: 100%;
+    border: none;
+     font-size: 2.8vh;
+     border-radius: 25px;
+     width: 95%;
+}
+.sair i{
+    font-size: 2.5vh;
+    margin: 1% 2%;
+}
+    </style>
+</head>
+<body>
+    <div class="topo">
+    <button class="noti"><i class="bi bi-question-circle"></i><i class="bi bi-bell"></i></button>
+    <main class="w-100 box">
+        <div class="w-100 box">
+            <form class="box" id="form-form">
+                <!-- image -->
+                <div class="image-upload box">
+                    <img id="image-preview" src="" class="w-100 h-100">
+                    <i class="bi bi-cloud-arrow-up"></i>
+                    <input id="image-field" type="file">
+                </div>
+            </form>
+        </div>
+    </main>
+    <center>
+<h1> João Pedro👍</h1>
+</br>
+</div>
+    </center>
+    <button class="btn"><i class="bi bi-person-circle"></i>Informações pessoais <i class="bi bi-chevron-right"></i></button>
+    <hr>
+    <a href="TelaHome.html">
+        <button class="btn"><i class="bi bi-gear-wide-connected"></i>Tela Inicial<i class="bi bi-chevron-right"></i></button></a>
+            <hr>
+            
+            <a href="TelaGorjeta.html">
+        <button class="btn"><i class="bi bi-coin"></i>Doações<i class="bi bi-chevron-right"></i></button></a>
+            <hr>
+
+            <a href="TelaLocalizacao.html">
+        <button class="btn"><i class="bi bi-geo-alt"></i>Endereços<i class="bi bi-chevron-right"></i></button> </a>
+            <hr>
+
+            <a href="TelaPagamento.html">
+        <button class="btn"><i class="bi bi-credit-card"></i>Pagamentos<i class="bi bi-chevron-right"></i></button></a>
+            <hr>
+         <button class="btn"><i class="bi bi-shield-minus"></i>Segurança<i class="bi bi-chevron-right"></i></button>
+             <hr>
+        <br><br><br>
+        <center>
+            <a href="index.html">
+          <button class="sair"><i class="bi bi-arrow-return-left"></i>Sair do aplicativo</button></a>
+        </center>
+    <script>
+        const imageField = document.querySelector("#image-field");
+const imagePreview = document.querySelector("#image-preview");
+
+const loadImage = (e) => {
+    const filePath = e.target || window.event.srcElement;
+
+    const file = filePath.files;
+
+    const fileReader = new FileReader();
+
+    fileReader.onload = () => {
+        imagePreview.src = fileReader.result;
+    };
+
+    fileReader.readAsDataURL(file[0]);
+};
+
+imageField.addEventListener("change",loadImage);
+    </script>
+</body>
