@@ -124,6 +124,22 @@ $(document).ready(function () {
         sessionStorage.setItem("currentDelivery", JSON.stringify(deliveryHistory));
     }
 
+ $("#applyDiscountBtn").on("click", function () {
+        if (deliveryHistory.length === 0) {
+            alert("Não há entrega para aplicar desconto.");
+        } else if (deliveryHistory[deliveryHistory.length - 1].confirmed) {
+            alert("A entrega já foi confirmada, não é possível aplicar desconto.");
+        } else {
+            var currentPrice = deliveryHistory[deliveryHistory.length - 1].price;
+            var discountedPrice = currentPrice * 0.5; // Aplica o desconto de 50%
+            deliveryHistory[deliveryHistory.length - 1].price = discountedPrice;
+            alert("Desconto de 50% aplicado! Novo preço: " + discountedPrice.toFixed(2) + " R$");
+            displayDeliveryHistory();
+            saveDeliveryToSessionStorage(); // Salva os dados atualizados no sessionStorage
+        }
+    });
+
+
     $("#acceptDelivery").on("click", function () {
         var price = parseFloat($("#output .result-table").text().match(/\d+\.\d+/)[0]);
         if (deliveryHistory.length > 0 && !deliveryHistory[deliveryHistory.length - 1].accepted) {

@@ -22,13 +22,13 @@
 
       
     /* Estilos CSS podem ser adicionados aqui */
-     @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
-    html,
-    body {
-        font-family: 'Hammersmith One', sans-serif;
-        overflow-x: hidden;
-    }
+      @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
+
+* {
+
+  font-family: 'Hammersmith One', sans-serif;
+}
     .decoration-none {
 
         text-decoration: none;
@@ -39,65 +39,36 @@
   </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-transparent">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">BikeJet</a>
 
-    <button class="navbar-toggler text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse text-danger" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
-        <li class="nav-item">
-          <a class="nav-link active text-danger" aria-current="page" href="TelaHome.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="TelaPerfil.html">Perfil</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Pedido
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="TelaEnvios.html">Solicitar / Localização</a></li>
-            <li><a class="dropdown-item" href="TelaHistorico.html">Histórico</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-danger" href="#">Sair</a></li>
-          </ul>
-        </li>
-  
-    </div>
-  </div>
-</nav>
+    <br>
+    <h1 class="text-center p-1">BikeJet</h1>
+    <hr>
 <center>
-<img src="https://raw.githubusercontent.com/DevJuanzok4/Portifolio-Juan-Coutinho./main/Mountain%20biking-cuate.png" class="text-center" height="" width="300px">
 </center>
 <div class="container p-2">
         <div class="row">
  
-            <h1 class="text-danger p-2">Serviços</h1>
+            <h1 class="text- p-2">Serviços</h1>
             <div class="col-6 col-md-4">
  
-                <a href="TelaSaldo.html" class="card-link decoration-none">
-                    <div class="card border border-danger">
+                <a href="TelaEnvios.html" class="card-link decoration-none">
+                    <div class="card border border-gray bg-danger">
                         <div class="card-body">
                             <center>
-                                <i style="font-size: 2rem;" class="bi bi-cash-coin text-center text-danger"></i>
-                                <h5 class="card-title text-danger">Histórico</h5>
+                                <i style="font-size: 2rem;"  class="bi bi-geo-alt-fill text-white"></i>
+                                <h5 class="card-title text-white">Pedidos</h5>
                             </center>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-6 col-md-4">
-                <a href="TelaPagamento.html" class="card-link decoration-none">
-                    <div class="card border border-danger">
+                <a href="bikejet.html#deliveryHistory" class="card-link decoration-none">
+                    <div class="card border border-gray bg-danger">
                         <div class="card-body">
                             <center>
-                                <i class="bi bi-credit-card-2-back text-danger" style="font-size: 2rem;"></i>
-                                <h5 class="card-title text-danger">Meu Cartão</h5>
+                                <i class="bi bi-clock-history text-white" style="font-size: 2rem;"></i>
+                                <h5 class="card-title text-white">Histórico</h5>
                             </center>
                         </div>
                     </div>
@@ -110,96 +81,82 @@
 
 <div class="container p-3">
         <div class="row">
+ <div class="container p-2">
+        <div class="row">
  
-            <h2 class="text-danger p-2">Solicitar Entrega</h2>
+            <h1 class="text- p-2">Funções</h1>
+            <div class="col-6 col-md-4">
+ 
+                <a href="pagamento.html" class="card-link decoration-none">
+                    <div class="card border border-danger">
+                        <div class="card-body">
+                            <center>
+                                <i style="font-size: 2rem;" class="bi bi-wallet2 text-center text-danger"></i>
+                                <h5 class="card-title text-danger">Pagamento </h5>
+                            </center>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4">
+                <a href="TelaPerfil.html" class="card-link decoration-none">
+                    <div class="card border border-danger">
+                        <div class="card-body">
+                            <center>
+                                <i class="bi bi-gear-fill text-danger" style="font-size: 2rem;"></i>
+                                <h5 class="card-title text-danger">Opções</h5>
+                            </center>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
             <div class="col-6 col-md-4">
             </div>
         </div>
  
-<a href="TelaEnvios.html">
-    <div class="card text-white  p-2 border border-danger">
-      
-        <img width="100px" height="120px" src="https://content.news.ifood.com.br/uploads/2021/11/a554b36addd944ea17535eebb4d165d7_cms-1636548761413-018jpeg.jpeg" class="card-img" alt="...">
-        <div class="card-img-overlay">
-            <h4 class="card-title text-danger"> Faça seu pedido de entrega! </h4>
-        </div>
-    </div>
-</a>
- 
+
 <br>
  
 
-<h2 class="text-danger p-2">Perguntas Frequentes</h2>
+<h2 class="text- p-2">Perguntas Frequentes</h2>
 <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-       Pegunta 01
+       Como faço para realizar um pedido de entrega no aplicativo? 
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body"> Como faço para realizar um pedido de entrega no aplicativo? <code>Resposta:</code> Para fazer um pedido de entrega, basta clicar na imagem acima de solicitação de entregas! </div>
+      <div class="accordion-body"> <code>Resposta:</code> Para fazer um pedido de entrega, basta clicar na imagem acima de solicitação de entregas! </div>
     </div>
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Pegunta 02
+       Quanto tempo leva para a entrega chegar após a realização do pedido?
       </button>
     </h2>
     <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body"> Quanto tempo leva para a entrega chegar após a realização do pedido? <code> Resposta: </code> O tempo de entrega pode variar dependendo da localização, do ponto de partida escolhido e da demanda do momento. </div>
+      <div class="accordion-body">  <code> Resposta: </code> O tempo de entrega pode variar dependendo da localização, do ponto de partida escolhido e da demanda do momento. </div>
     </div>
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-         Pegunta 03
+       Posso cancelar meu pedido após a confirmação?
       </button>
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body"> Posso cancelar meu pedido após a confirmação? <code> Resposta: </code>  O cancelamento de pedidos pode ser possível até o início do processo de busca do produto ao primeiro ponto de partida. Após esse ponto, o cancelamento pode não ser mais viável. </div>
+      <div class="accordion-body"><code> Resposta: </code>  O cancelamento de pedidos pode ser possível até o início do processo de busca do produto ao primeiro ponto de partida. Após esse ponto, o cancelamento pode não ser mais viável. </div>
     </div>
   </div>
 </div>
 
 <br><br>
 
-<div class="navigation">
-<ul>
-<li class="list ">
-<a href="TelaEnvios.html">
-<span class="icon"><ion-icon name="location-outline"></ion-icon></span>
-<span class="text">Pedido</span>
-</a>
-</li>
-<li class="list">
-<a href="TelaHistorico.html">
-<span class="icon"><ion-icon name="timer-outline"></ion-icon></span>
-<span class="text">Histórico</span>
-</a>
-</li>
-<li class="list active">
-<a href="TelaHome.html">
-<span class="icon"><ion-icon name="notifications-outline"></ion-icon></span>
-<span class="text">Notificação</span>
-</a>
-</li>
-<li class="list">
-<a href="TelaPagamento.html">
-<span class="icon"><ion-icon name="wallet-outline"></ion-icon></span>
-<span class="text">Pagamento</span>
-</a>
-</li>
-<li class="list">
-<a href="TelaPerfil.html">
-<span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-<span class="text">Perfil</span>
-</a>
-</li>
-<div class="indicator"></div>
-</ul>
-</div>
 <script>
     const list = document.querySelectorAll('.list');
     function activeLink(){
